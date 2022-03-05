@@ -1,5 +1,6 @@
 import { styled, VariantProps } from '@stitches/react';
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { IconType } from 'react-icons';
 import ButtonContent, { ButtonContentStyled } from './button-content';
 import ButtonIcon from './button-icon';
 import ButtonOverlay, { ButtonOverlayStyled } from './button-overlay';
@@ -11,17 +12,22 @@ enum Variant {
   TEXT = 'text',
 }
 
-export enum Color {
+enum Color {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
 }
 
+enum Size {
+  NORMAL = 'normal',
+  LARGE = 'large',
+}
+
 type Props = VariantProps<typeof ButtonRoot> & {
   // HTMLAttributes<HTMLButtonElement> &
   children: ReactNode;
-  leftIcon?: ReactElement<typeof ButtonIcon>;
-  rightIcon?: ReactElement<typeof ButtonIcon>;
+  leftIcon?: IconType;
+  rightIcon?: IconType;
   disabled?: boolean;
 };
 
@@ -30,6 +36,7 @@ const ButtonRoot = styled('button', {
   borderRadius: '999px',
   overflow: 'hidden',
   cursor: 'pointer',
+
   [`&:hover > ${ButtonOverlayStyled}`]: {
     opacity: 0.08,
   },
@@ -58,6 +65,13 @@ const ButtonRoot = styled('button', {
         background: 'none',
         border: 'none',
         color: '$$surface',
+
+        '&.left-icon': {
+          padding: '0 16px 0 12px',
+        },
+        '&.right-icon': {
+          padding: '0 12px 0 16px',
+        },
       },
     },
     [Variant.FILLED]: {
@@ -66,6 +80,12 @@ const ButtonRoot = styled('button', {
         color: '$$onSurface',
         backgroundColor: '$$surface',
 
+        '&.left-icon': {
+          padding: '0 24px 0 16px',
+        },
+        '&.right-icon': {
+          padding: '0 16px 0 24px',
+        },
         [`&:disabled > ${ButtonOverlayStyled}`]: {
           opacity: 0.12,
         },
@@ -77,6 +97,12 @@ const ButtonRoot = styled('button', {
         color: '$$surface',
         border: '1px solid $neutral-variant50',
 
+        '&.left-icon': {
+          padding: '0 24px 0 16px',
+        },
+        '&.right-icon': {
+          padding: '0 16px 0 24px',
+        },
         '&:focus': {
           borderColor: '$$surface',
         },
@@ -89,6 +115,12 @@ const ButtonRoot = styled('button', {
         backgroundColor: '$surface1',
         boxShadow: '$1',
 
+        '&.left-icon': {
+          padding: '0 24px 0 16px',
+        },
+        '&.right-icon': {
+          padding: '0 16px 0 24px',
+        },
         '&:disabled': {
           boxShadow: 'none',
 
@@ -99,24 +131,24 @@ const ButtonRoot = styled('button', {
       },
     },
     color: {
-      [Color.PRIMARY]: {
+      [`${Color.PRIMARY}`]: {
         $$surface: '$colors$primary40',
         $$onSurface: '$colors$primary100',
       },
-      [Color.SECONDARY]: {
+      [`${Color.SECONDARY}`]: {
         $$surface: '$colors$secondary40',
         $$onSurface: '$colors$secondary100',
       },
-      [Color.TERTIARY]: {
+      [`${Color.TERTIARY}`]: {
         $$surface: '$colors$tertiary40',
         $$onSurface: '$colors$tertiary100',
       },
     },
     size: {
-      small: {
+      [`${Size.NORMAL}`]: {
         height: '40px',
       },
-      large: {
+      [`${Size.LARGE}`]: {
         height: '52px',
       },
     },
@@ -125,19 +157,22 @@ const ButtonRoot = styled('button', {
   defaultVariants: {
     color: Color.PRIMARY,
     [Variant.TEXT]: true,
-    size: 'large',
+    size: Size.NORMAL,
   },
 });
 
 const Button = ({ leftIcon, children, rightIcon, ...rest }: Props) => {
   return (
-    <ButtonRoot {...rest}>
+    <ButtonRoot
+      {...rest}
+      className={leftIcon ? 'left-icon' : rightIcon ? 'right-icon' : ''}
+    >
       <ButtonOverlay />
 
       <ButtonContent>
-        {leftIcon}
+        {leftIcon && <ButtonIcon as={leftIcon} />}
         {children}
-        {rightIcon}
+        {rightIcon && <ButtonIcon as={rightIcon} />}
       </ButtonContent>
     </ButtonRoot>
   );

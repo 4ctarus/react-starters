@@ -1,8 +1,7 @@
 import { styled } from '@stitches/react';
 import type { NextPage } from 'next';
 import { MdAlarmAdd } from 'react-icons/md';
-import Button, { Color } from '../components/Button';
-import ButtonIcon from '../components/Button/button-icon';
+import Button from '../components/Button';
 
 const Home: NextPage = () => {
   const HStack = styled('div', {
@@ -28,11 +27,11 @@ const Home: NextPage = () => {
             <span>Button</span>
           </Button>
 
-          <Button leftIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button rightIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
@@ -46,11 +45,11 @@ const Home: NextPage = () => {
             <span>Button</span>
           </Button>
 
-          <Button filled leftIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button filled leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button filled rightIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button filled rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
@@ -64,11 +63,11 @@ const Home: NextPage = () => {
             <span>Button</span>
           </Button>
 
-          <Button outlined leftIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button outlined leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button outlined rightIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button outlined rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
@@ -82,11 +81,11 @@ const Home: NextPage = () => {
             <span>Button</span>
           </Button>
 
-          <Button elevated leftIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button elevated leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button elevated rightIcon={<ButtonIcon as={MdAlarmAdd} />}>
+          <Button elevated rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
@@ -100,103 +99,73 @@ const Home: NextPage = () => {
         <h4>Button secondary</h4>
 
         <HStack>
-          <Button color={Color.SECONDARY}>
+          <Button color="secondary">
             <span>Button</span>
           </Button>
 
-          <Button
-            color={Color.SECONDARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button color="secondary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            color={Color.SECONDARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button color="secondary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button color={Color.SECONDARY} disabled>
+          <Button color="secondary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
 
         <HStack>
-          <Button filled color={Color.SECONDARY}>
+          <Button filled color="secondary">
             <span>Button</span>
           </Button>
 
-          <Button
-            filled
-            color={Color.SECONDARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button filled color="secondary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            filled
-            color={Color.SECONDARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button filled color="secondary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button filled color={Color.SECONDARY} disabled>
+          <Button filled color="secondary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
 
         <HStack>
-          <Button outlined color={Color.SECONDARY}>
+          <Button outlined color="secondary">
             <span>Button</span>
           </Button>
 
-          <Button
-            outlined
-            color={Color.SECONDARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button outlined color="secondary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            outlined
-            color={Color.SECONDARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button outlined color="secondary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button outlined color={Color.SECONDARY} disabled>
+          <Button outlined color="secondary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
 
         <HStack>
-          <Button elevated color={Color.SECONDARY}>
+          <Button elevated color="secondary">
             <span>Button</span>
           </Button>
 
-          <Button
-            elevated
-            color={Color.SECONDARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button elevated color="secondary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            elevated
-            color={Color.SECONDARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button elevated color="secondary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button elevated color={Color.SECONDARY} disabled>
+          <Button elevated color="secondary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
@@ -206,103 +175,73 @@ const Home: NextPage = () => {
         <h4>Button tertiary</h4>
 
         <HStack>
-          <Button color={Color.TERTIARY}>
+          <Button color="tertiary">
             <span>Button</span>
           </Button>
 
-          <Button
-            color={Color.TERTIARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button color="tertiary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            color={Color.TERTIARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button color="tertiary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button color={Color.TERTIARY} disabled>
+          <Button color="tertiary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
 
         <HStack>
-          <Button filled color={Color.TERTIARY}>
+          <Button filled color="tertiary">
             <span>Button</span>
           </Button>
 
-          <Button
-            filled
-            color={Color.TERTIARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button filled color="tertiary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            filled
-            color={Color.TERTIARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button filled color="tertiary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button filled color={Color.TERTIARY} disabled>
+          <Button filled color="tertiary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
 
         <HStack>
-          <Button outlined color={Color.TERTIARY}>
+          <Button outlined color="tertiary">
             <span>Button</span>
           </Button>
 
-          <Button
-            outlined
-            color={Color.TERTIARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button outlined color="tertiary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            outlined
-            color={Color.TERTIARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button outlined color="tertiary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button outlined color={Color.TERTIARY} disabled>
+          <Button outlined color="tertiary" disabled>
             <span>Button</span>
           </Button>
         </HStack>
 
         <HStack>
-          <Button elevated color={Color.TERTIARY}>
+          <Button elevated color="tertiary">
             <span>Button</span>
           </Button>
 
-          <Button
-            elevated
-            color={Color.TERTIARY}
-            leftIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button elevated color="tertiary" leftIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button
-            elevated
-            color={Color.TERTIARY}
-            rightIcon={<ButtonIcon as={MdAlarmAdd} />}
-          >
+          <Button elevated color="tertiary" rightIcon={MdAlarmAdd}>
             <span>Button left icon</span>
           </Button>
 
-          <Button elevated color={Color.TERTIARY} disabled>
+          <Button elevated color="tertiary" disabled>
             <span>Button</span>
           </Button>
         </HStack>

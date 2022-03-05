@@ -13,6 +13,7 @@ export const ButtonContentStyled = styled('div', {
   justifyContent: 'center',
   gap: '8px',
   height: '100%',
+  typeface: 'label-large',
 });
 
 const ButtonContent = (props: Props) => {
