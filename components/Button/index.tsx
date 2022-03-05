@@ -1,5 +1,5 @@
 import { styled, VariantProps } from '@stitches/react';
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import ButtonContent, { ButtonContentStyled } from './button-content';
 import ButtonIcon from './button-icon';
@@ -23,13 +23,13 @@ enum Size {
   LARGE = 'large',
 }
 
-type Props = VariantProps<typeof ButtonRoot> & {
-  // HTMLAttributes<HTMLButtonElement> &
-  children: ReactNode;
-  leftIcon?: IconType;
-  rightIcon?: IconType;
-  disabled?: boolean;
-};
+type Props = VariantProps<typeof ButtonRoot> &
+  HTMLAttributes<HTMLButtonElement> & {
+    children: ReactNode;
+    leftIcon?: IconType;
+    rightIcon?: IconType;
+    disabled?: boolean;
+  };
 
 const ButtonRoot = styled('button', {
   position: 'relative',

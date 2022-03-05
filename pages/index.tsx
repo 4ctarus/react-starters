@@ -17,6 +17,9 @@ const Home: NextPage = () => {
     gap: '8px',
   });
 
+  const clickHandler = () => {
+    console.log('clicked');
+  };
   return (
     <VStack>
       <VStack>
@@ -99,19 +102,27 @@ const Home: NextPage = () => {
         <h4>Button secondary</h4>
 
         <HStack>
-          <Button color="secondary">
+          <Button color="secondary" onClick={() => clickHandler()}>
             <span>Button</span>
           </Button>
 
-          <Button color="secondary" leftIcon={MdAlarmAdd}>
+          <Button
+            color="secondary"
+            leftIcon={MdAlarmAdd}
+            onClick={() => clickHandler()}
+          >
             <span>Button left icon</span>
           </Button>
 
-          <Button color="secondary" rightIcon={MdAlarmAdd}>
+          <Button
+            color="secondary"
+            rightIcon={MdAlarmAdd}
+            onClick={() => clickHandler()}
+          >
             <span>Button left icon</span>
           </Button>
 
-          <Button color="secondary" disabled>
+          <Button color="secondary" disabled onClick={() => clickHandler()}>
             <span>Button</span>
           </Button>
         </HStack>
