@@ -1,4 +1,4 @@
-import { styled, VariantProps } from '@stitches/react';
+import { styled } from '@stitches/react';
 import { HTMLAttributes, ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import ButtonContent, { ButtonContentStyled } from './button-content';
@@ -23,7 +23,7 @@ enum Size {
   LARGE = 'large',
 }
 
-type Props = VariantProps<typeof ButtonRoot> &
+type Props = React.ComponentProps<typeof ButtonRoot> &
   HTMLAttributes<HTMLButtonElement> & {
     children: ReactNode;
     leftIcon?: IconType;
@@ -79,6 +79,7 @@ const ButtonRoot = styled('button', {
         padding: '0 24px',
         color: '$$onSurface',
         backgroundColor: '$$surface',
+        border: 'none',
 
         '&.left-icon': {
           padding: '0 24px 0 16px',
@@ -95,6 +96,7 @@ const ButtonRoot = styled('button', {
       true: {
         padding: '0 24px',
         color: '$$surface',
+        background: 'none',
         border: '1px solid $neutral-variant50',
 
         '&.left-icon': {
@@ -114,6 +116,7 @@ const ButtonRoot = styled('button', {
         color: '$$surface',
         backgroundColor: '$surface1',
         boxShadow: '$1',
+        border: 'none',
 
         '&.left-icon': {
           padding: '0 24px 0 16px',

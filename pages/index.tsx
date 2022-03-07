@@ -1,22 +1,10 @@
-import { styled } from '@stitches/react';
 import type { NextPage } from 'next';
 import { MdAlarmAdd } from 'react-icons/md';
 import Button from '../components/Button';
+import HStack from '../components/HStack';
+import VStack from '../components/VStack';
 
 const Home: NextPage = () => {
-  const HStack = styled('div', {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: '8px',
-    flexWrap: 'wrap',
-  });
-
-  const VStack = styled('div', {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '8px',
-  });
-
   const clickHandler = () => {
     console.log('clicked');
   };
