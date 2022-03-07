@@ -5,37 +5,51 @@ import Button from '../components/Button';
 import HStack from '../components/HStack';
 import { defaultTheme } from '../themes';
 
+const icons = { MdAlarmAdd, null };
+
+
 export default {
   title: 'Example/Button',
   component: Button,
   argTypes: {
     text: {
-      type: { name: 'boolean', required: false },
-      defaultValue: false,
-      control: {
-        type: null,
-      },
+      control: false,
     },
     outlined: {
-      type: { name: 'boolean', required: false },
-      defaultValue: false,
-      control: {
-        type: null,
-      },
+      control: false,
     },
     filled: {
-      type: { name: 'boolean', required: false },
-      defaultValue: false,
-      control: {
-        type: null,
-      },
+      control: false,
     },
     elevated: {
-      type: { name: 'boolean', required: false },
-      defaultValue: false,
+      control: false,
+    },
+    css: {
+      control: false,
+    },
+    leftIcon: {
+      options: Object.keys(icons),
+      mapping: icons,
       control: {
-        type: null,
+        type: 'select',
+        labels: {
+          MdAlarmAdd: 'Oui',
+          null: 'Non',
+        },
       },
+      defaultValue: null,
+    },
+    rightIcon: {
+      options: Object.keys(icons),
+      mapping: icons,
+      control: {
+        type: 'select',
+        labels: {
+          MdAlarmAdd: 'Oui',
+          null: 'Non',
+        },
+      },
+      defaultValue: null,
     },
     size: { options: ['normal', 'large'], defaultValue: 'normal' },
     color: {
@@ -48,18 +62,6 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => (
   <HStack className={defaultTheme}>
     <Button {...args}>
-      <span>Button</span>
-    </Button>
-
-    <Button leftIcon={MdAlarmAdd} {...args}>
-      <span>Button left icon</span>
-    </Button>
-
-    <Button rightIcon={MdAlarmAdd} {...args}>
-      <span>Button right icon</span>
-    </Button>
-
-    <Button disabled {...args}>
       <span>Button</span>
     </Button>
   </HStack>
