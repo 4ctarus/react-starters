@@ -2,7 +2,8 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import Button from './';
 
-test('Handle button click', () => {
+test('Test button event', () => {
+  const buttonText = 'Button label';
   let count = 0;
 
   const clickHandler = () => {
@@ -11,7 +12,7 @@ test('Handle button click', () => {
 
   const { rerender } = render(
     <Button data-testid="button" onClick={() => clickHandler()}>
-      <span data-testid="button-content">Button</span>
+      <span data-testid="button-content">{buttonText}</span>
     </Button>,
   );
 
@@ -21,20 +22,20 @@ test('Handle button click', () => {
   fireEvent.click(button);
 
   expect(button).not.toBeNull();
-  expect(buttonContent).toHaveTextContent('Button');
+  expect(buttonContent).toHaveTextContent(buttonText);
   expect(count).toBe(1);
   expect(button).not.toBeDisabled();
 
   rerender(
-    <Button data-testid="button">
-      <span data-testid="button-content">Button</span>
+    <Button data-testid="button" onClick={() => clickHandler()} disabled>
+      <span data-testid="button-content">{buttonText}</span>
     </Button>,
   );
 
   fireEvent.click(button);
 
   expect(button).not.toBeNull();
-  expect(buttonContent).toHaveTextContent('Button');
+  expect(buttonContent).toHaveTextContent(buttonText);
   expect(count).toBe(1);
-  //   expect(button).toBeDisabled();
+  expect(button).toBeDisabled();
 });
