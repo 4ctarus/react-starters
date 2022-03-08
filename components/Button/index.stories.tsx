@@ -1,15 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { MdAlarmAdd } from 'react-icons/md';
-import Button from '../components/Button';
-import HStack from '../components/HStack';
-import { defaultTheme } from '../themes';
+import Button, { ButtonColor, ButtonSize } from '.';
+import { defaultTheme } from '../../themes';
+import HStack from '../HStack';
 
-const icons = { MdAlarmAdd, null };
-
+const icons = { 0: MdAlarmAdd, 1: null };
 
 export default {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
   argTypes: {
     text: {
@@ -31,10 +30,10 @@ export default {
       options: Object.keys(icons),
       mapping: icons,
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: {
-          MdAlarmAdd: 'Oui',
-          null: 'Non',
+          0: 'Oui',
+          1: 'Non',
         },
       },
       defaultValue: null,
@@ -43,19 +42,35 @@ export default {
       options: Object.keys(icons),
       mapping: icons,
       control: {
-        type: 'select',
+        type: 'inline-radio',
         labels: {
-          MdAlarmAdd: 'Oui',
-          null: 'Non',
+          0: 'Oui',
+          1: 'Non',
         },
       },
       defaultValue: null,
     },
-    size: { options: ['normal', 'large'], defaultValue: 'normal' },
-    color: {
-      options: ['primary', 'secondary', 'tertiary'],
-      defaultValue: 'primary',
+    size: {
+      options: Object.values(ButtonSize),
+      control: {
+        type: 'inline-radio',
+        defaultValue: ButtonSize.NORMAL,
+      },
+      table: {
+        defaultValue: { summary: ButtonSize.NORMAL },
+      },
     },
+    color: {
+      options: Object.values(ButtonColor),
+      control: {
+        type: 'inline-radio',
+        defaultValue: ButtonColor.PRIMARY,
+      },
+      table: {
+        defaultValue: { summary: ButtonColor.PRIMARY },
+      },
+    },
+    onClick: { action: 'onClick' },
   },
 } as ComponentMeta<typeof Button>;
 

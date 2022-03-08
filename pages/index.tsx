@@ -1,250 +1,149 @@
 import type { NextPage } from 'next';
+import { useState } from 'react';
 import { MdAlarmAdd } from 'react-icons/md';
 import Button from '../components/Button';
 import HStack from '../components/HStack';
 import VStack from '../components/VStack';
 
 const Home: NextPage = () => {
+  const [count, setCount] = useState(0);
+
   const clickHandler = () => {
-    console.log('clicked');
+    setCount(count + 1);
   };
+
   return (
     <VStack>
-      <VStack>
-        <h4>Button primary</h4>
+      {['primary', 'secondary', 'tertiary'].map((color, index) => (
+        <VStack key={index}>
+          <h4>Button {`${color} ${count}`}</h4>
 
-        <HStack>
-          <Button>
-            <span>Button</span>
-          </Button>
+          <HStack>
+            <Button {...{ color }} onClick={() => clickHandler()}>
+              <span>Button</span>
+            </Button>
 
-          <Button leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              leftIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              rightIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
+            <Button {...{ color }} disabled onClick={() => clickHandler()}>
+              <span>Button</span>
+            </Button>
+          </HStack>
 
-        <HStack>
-          <Button filled>
-            <span>Button</span>
-          </Button>
+          <HStack>
+            <Button filled {...{ color }} onClick={() => clickHandler()}>
+              <span>Button</span>
+            </Button>
 
-          <Button filled leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              filled
+              leftIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button filled rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              filled
+              rightIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button filled disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
+            <Button
+              filled
+              {...{ color }}
+              disabled
+              onClick={() => clickHandler()}
+            >
+              <span>Button</span>
+            </Button>
+          </HStack>
 
-        <HStack>
-          <Button outlined>
-            <span>Button</span>
-          </Button>
+          <HStack>
+            <Button outlined {...{ color }} onClick={() => clickHandler()}>
+              <span>Button</span>
+            </Button>
 
-          <Button outlined leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              outlined
+              leftIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button outlined rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              outlined
+              rightIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button outlined disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
+            <Button
+              outlined
+              {...{ color }}
+              disabled
+              onClick={() => clickHandler()}
+            >
+              <span>Button</span>
+            </Button>
+          </HStack>
 
-        <HStack>
-          <Button elevated>
-            <span>Button</span>
-          </Button>
+          <HStack>
+            <Button elevated {...{ color }} onClick={() => clickHandler()}>
+              <span>Button</span>
+            </Button>
 
-          <Button elevated leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              elevated
+              leftIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button elevated rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
+            <Button
+              elevated
+              rightIcon={MdAlarmAdd}
+              {...{ color }}
+              onClick={() => clickHandler()}
+            >
+              <span>Button left icon</span>
+            </Button>
 
-          <Button elevated disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-      </VStack>
-
-      <VStack>
-        <h4>Button secondary</h4>
-
-        <HStack>
-          <Button color="secondary" onClick={() => clickHandler()}>
-            <span>Button</span>
-          </Button>
-
-          <Button
-            color="secondary"
-            leftIcon={MdAlarmAdd}
-            onClick={() => clickHandler()}
-          >
-            <span>Button left icon</span>
-          </Button>
-
-          <Button
-            color="secondary"
-            rightIcon={MdAlarmAdd}
-            onClick={() => clickHandler()}
-          >
-            <span>Button left icon</span>
-          </Button>
-
-          <Button color="secondary" disabled onClick={() => clickHandler()}>
-            <span>Button</span>
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button filled color="secondary">
-            <span>Button</span>
-          </Button>
-
-          <Button filled color="secondary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button filled color="secondary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button filled color="secondary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button outlined color="secondary">
-            <span>Button</span>
-          </Button>
-
-          <Button outlined color="secondary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button outlined color="secondary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button outlined color="secondary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button elevated color="secondary">
-            <span>Button</span>
-          </Button>
-
-          <Button elevated color="secondary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button elevated color="secondary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button elevated color="secondary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-      </VStack>
-
-      <VStack>
-        <h4>Button tertiary</h4>
-
-        <HStack>
-          <Button color="tertiary">
-            <span>Button</span>
-          </Button>
-
-          <Button color="tertiary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button color="tertiary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button color="tertiary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button filled color="tertiary">
-            <span>Button</span>
-          </Button>
-
-          <Button filled color="tertiary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button filled color="tertiary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button filled color="tertiary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button outlined color="tertiary">
-            <span>Button</span>
-          </Button>
-
-          <Button outlined color="tertiary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button outlined color="tertiary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button outlined color="tertiary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-
-        <HStack>
-          <Button elevated color="tertiary">
-            <span>Button</span>
-          </Button>
-
-          <Button elevated color="tertiary" leftIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button elevated color="tertiary" rightIcon={MdAlarmAdd}>
-            <span>Button left icon</span>
-          </Button>
-
-          <Button elevated color="tertiary" disabled>
-            <span>Button</span>
-          </Button>
-        </HStack>
-      </VStack>
+            <Button
+              elevated
+              {...{ color }}
+              disabled
+              onClick={() => clickHandler()}
+            >
+              <span>Button</span>
+            </Button>
+          </HStack>
+        </VStack>
+      ))}
     </VStack>
   );
 };

@@ -18,86 +18,86 @@ enum Slug {
   'LABEL_SMALL' = 'label-small',
 }
 
-const typefaces: Record<Slug, CSS> = {
-  display: {
+const typefaces: Record<string, CSS> = {
+  [`${Slug.DISPLAY}`]: {
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '2.813rem',
     lineHeight: '3.25rem',
   },
-  'display-large': {
+  [`${Slug.DISPLAY_LARGE}`]: {
     fontSize: '3.563rem',
     lineHeight: '4rem',
     letterSpacing: '-0.016rem',
   },
-  'display-small': {
+  [`${Slug.DISPLAY_SMALL}`]: {
     fontSize: '2.25rem',
     lineHeight: '2.75rem',
   },
-  headline: {
+  [`${Slug.HEADLINE}`]: {
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '1.75rem',
     lineHeight: '2.25rem',
   },
-  'headline-large': {
+  [`${Slug.HEADLINE_LARGE}`]: {
     fontSize: '2rem',
     lineHeight: '2.5rem',
   },
-  'headline-small': {
+  [`${Slug.HEADLINE_SMALL}`]: {
     fontSize: '1.5rem',
     lineHeight: '2rem',
   },
-  title: {
+  [`${Slug.TITLE}`]: {
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '1rem',
     lineHeight: '1.5rem',
     letterSpacing: '0.006rem',
   },
-  'title-large': {
+  [`${Slug.TITLE_LARGE}`]: {
     fontWeight: '500',
     fontSize: '1.375rem',
     lineHeight: '1.75rem',
     letterSpacing: '0',
   },
-  'title-small': {
+  [`${Slug.LABEL_SMALL}`]: {
     fontWeight: '500',
     fontSize: '0.875rem',
     lineHeight: '1.25rem',
     letterSpacing: '0.006rem',
   },
-  body: {
+  [`${Slug.BODY}`]: {
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '0.875rem',
     lineHeight: '1.25rem',
     letterSpacing: '0.016rem',
   },
-  'body-large': {
+  [`${Slug.BODY_LARGE}`]: {
     fontSize: '1rem',
     lineHeight: '1.5rem',
     letterSpacing: '0.031rem',
   },
-  'body-small': {
+  [`${Slug.BODY_SMALL}`]: {
     fontSize: '0.75rem',
     lineHeight: '1rem',
     letterSpacing: '0.025rem',
   },
-  label: {
+  [`${Slug.LABEL}`]: {
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '0.75rem',
     lineHeight: '1rem',
     letterSpacing: '0.031rem',
   },
-  'label-large': {
+  [`${Slug.LABEL_LARGE}`]: {
     fontWeight: '500',
     fontSize: '0.875rem',
     lineHeight: '1.25rem',
     letterSpacing: '0.006rem',
   },
-  'label-small': {
+  [`${Slug.LABEL_SMALL}`]: {
     fontWeight: '500',
     fontSize: '0.688rem',
     lineHeight: '1rem',

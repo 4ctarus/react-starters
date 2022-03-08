@@ -5,20 +5,20 @@ import ButtonContent, { ButtonContentStyled } from './button-content';
 import ButtonIcon from './button-icon';
 import ButtonOverlay, { ButtonOverlayStyled } from './button-overlay';
 
-enum Variant {
+export enum ButtonVariant {
   FILLED = 'filled',
   OUTLINED = 'outlined',
   ELEVATED = 'elevated',
   TEXT = 'text',
 }
 
-enum Color {
+export enum ButtonColor {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
   TERTIARY = 'tertiary',
 }
 
-enum Size {
+export enum ButtonSize {
   NORMAL = 'normal',
   LARGE = 'large',
 }
@@ -59,7 +59,7 @@ const ButtonRoot = styled('button', {
   },
 
   variants: {
-    [Variant.TEXT]: {
+    [ButtonVariant.TEXT]: {
       true: {
         padding: '0 12px',
         background: 'none',
@@ -74,7 +74,7 @@ const ButtonRoot = styled('button', {
         },
       },
     },
-    [Variant.FILLED]: {
+    [ButtonVariant.FILLED]: {
       true: {
         padding: '0 24px',
         color: '$$onSurface',
@@ -92,7 +92,7 @@ const ButtonRoot = styled('button', {
         },
       },
     },
-    [Variant.OUTLINED]: {
+    [ButtonVariant.OUTLINED]: {
       true: {
         padding: '0 24px',
         color: '$$surface',
@@ -110,7 +110,7 @@ const ButtonRoot = styled('button', {
         },
       },
     },
-    [Variant.ELEVATED]: {
+    [ButtonVariant.ELEVATED]: {
       true: {
         padding: '0 24px',
         color: '$$surface',
@@ -134,33 +134,33 @@ const ButtonRoot = styled('button', {
       },
     },
     color: {
-      [`${Color.PRIMARY}`]: {
+      [`${ButtonColor.PRIMARY}`]: {
         $$surface: '$colors$primary40',
         $$onSurface: '$colors$primary100',
       },
-      [`${Color.SECONDARY}`]: {
+      [`${ButtonColor.SECONDARY}`]: {
         $$surface: '$colors$secondary40',
         $$onSurface: '$colors$secondary100',
       },
-      [`${Color.TERTIARY}`]: {
+      [`${ButtonColor.TERTIARY}`]: {
         $$surface: '$colors$tertiary40',
         $$onSurface: '$colors$tertiary100',
       },
     },
     size: {
-      [`${Size.NORMAL}`]: {
+      [`${ButtonSize.NORMAL}`]: {
         height: '40px',
       },
-      [`${Size.LARGE}`]: {
+      [`${ButtonSize.LARGE}`]: {
         height: '52px',
       },
     },
   },
 
   defaultVariants: {
-    color: Color.PRIMARY,
-    [Variant.TEXT]: true,
-    size: Size.NORMAL,
+    color: ButtonColor.PRIMARY,
+    [ButtonVariant.TEXT]: true,
+    size: ButtonSize.NORMAL,
   },
 });
 
