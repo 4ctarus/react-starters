@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { MdAlarmAdd } from 'react-icons/md';
-import Button from '../components/Button';
+import Button, { ButtonColor } from '../components/Button';
 import HStack from '../components/HStack';
 import VStack from '../components/VStack';
 
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
   return (
     <VStack>
-      {['primary', 'secondary', 'tertiary'].map((color, index) => (
+      {Object.values(ButtonColor).map((color, index) => (
         <VStack key={index}>
           <h4>Button {`${color} ${count}`}</h4>
 
