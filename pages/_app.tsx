@@ -1,9 +1,10 @@
 import '@fontsource/poppins';
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { defaultTheme } from '../themes';
+import { defaultTheme, globalStyles } from '../themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  globalStyles();
+
   return <Component {...pageProps} className={defaultTheme} />;
 }
 

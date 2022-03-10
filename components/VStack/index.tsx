@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../themes';
 
 const VStack = styled('div', {
   display: 'flex',

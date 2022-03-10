@@ -13,10 +13,14 @@ const Home: NextPage = () => {
   };
 
   return (
-    <VStack>
+    <VStack css={{ padding: '$2' }}>
+      <div>
+        <span>{`number of click ${count}`}</span>
+      </div>
+
       {Object.values(ButtonColor).map((color, index) => (
         <VStack key={index}>
-          <h4>Button {`${color} ${count}`}</h4>
+          <h4>Button {color}</h4>
 
           <HStack>
             <Button {...{ color }} onClick={() => clickHandler()}>

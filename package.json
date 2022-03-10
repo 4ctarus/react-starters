@@ -9,7 +9,7 @@
     "prepare": "husky install",
     "lint": "eslint --ext .ts,tsx .",
     "lint-fix": "eslint --ext .ts,tsx . --fix",
-    "test": "npm run lint-fix",
+    "test": "npm run lint-fix && jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "jest": "jest --watch"

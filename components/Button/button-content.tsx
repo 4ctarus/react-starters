@@ -1,5 +1,6 @@
-import { styled, VariantProps } from '@stitches/react';
+import { VariantProps } from '@stitches/react';
 import { ReactNode } from 'react';
+import { styled } from '../../themes';
 
 type Props = VariantProps<typeof ButtonContentStyled> & {
   children: ReactNode;

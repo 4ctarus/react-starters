@@ -1,8 +1,8 @@
-import { createStitches } from '@stitches/react';
+import { createStitches, globalCss } from '@stitches/react';
 import colors from './colors';
 import utils from './utils';
 
-const { createTheme } = createStitches({
+export const { theme: defaultTheme, styled } = createStitches({
   theme: {
     colors,
     space: {
@@ -13,11 +13,7 @@ const { createTheme } = createStitches({
       5: '20px',
       6: '24px',
     },
-    fontSizes: {
-      1: '12px',
-      2: '13px',
-      3: '15px',
-    },
+    fontSizes: {},
     fonts: {},
     fontWeights: {},
     lineHeights: {},
@@ -35,4 +31,18 @@ const { createTheme } = createStitches({
   utils,
 });
 
-export const defaultTheme = createTheme('default-theme');
+export const globalStyles = globalCss({
+  'html, body': {
+    margin: 0,
+  },
+  'body, button': {
+    fontFamily: '"Poppins", sans-serif',
+  },
+  a: {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+  '*': {
+    boxSizing: 'border-box',
+  },
+});

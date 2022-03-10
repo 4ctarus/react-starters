@@ -1,103 +1,102 @@
 import { CSS } from '@stitches/react';
 
-enum Slug {
-  DISPLAY = 'display',
-  'DISPLAY_LARGE' = 'display-large',
-  'DISPLAY_SMALL' = 'display-small',
-  HEADLINE = 'headline',
-  'HEADLINE_LARGE' = 'headline-large',
-  'HEADLINE_SMALL' = 'headline-small',
-  TITLE = 'title',
-  'TITLE_LARGE' = 'title-large',
-  'TITLE_SMALL' = 'title-small',
-  BODY = 'body',
-  'BODY_LARGE' = 'body-large',
-  'BODY_SMALL' = 'body-small',
-  LABEL = 'label',
-  'LABEL_LARGE' = 'label-large',
-  'LABEL_SMALL' = 'label-small',
-}
+type Slug =
+  | 'display'
+  | 'display-large'
+  | 'display-small'
+  | 'headline'
+  | 'headline-large'
+  | 'headline-small'
+  | 'title'
+  | 'title-large'
+  | 'title-small'
+  | 'body'
+  | 'body-large'
+  | 'body-small'
+  | 'label'
+  | 'label-large'
+  | 'label-small';
 
-const typefaces: Record<string, CSS> = {
-  [`${Slug.DISPLAY}`]: {
+const typefaces: Record<Slug, CSS> = {
+  display: {
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '2.813rem',
     lineHeight: '3.25rem',
   },
-  [`${Slug.DISPLAY_LARGE}`]: {
+  'display-large': {
     fontSize: '3.563rem',
     lineHeight: '4rem',
     letterSpacing: '-0.016rem',
   },
-  [`${Slug.DISPLAY_SMALL}`]: {
+  'display-small': {
     fontSize: '2.25rem',
     lineHeight: '2.75rem',
   },
-  [`${Slug.HEADLINE}`]: {
+  headline: {
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '1.75rem',
     lineHeight: '2.25rem',
   },
-  [`${Slug.HEADLINE_LARGE}`]: {
+  'headline-large': {
     fontSize: '2rem',
     lineHeight: '2.5rem',
   },
-  [`${Slug.HEADLINE_SMALL}`]: {
+  'headline-small': {
     fontSize: '1.5rem',
     lineHeight: '2rem',
   },
-  [`${Slug.TITLE}`]: {
+  title: {
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '1rem',
     lineHeight: '1.5rem',
     letterSpacing: '0.006rem',
   },
-  [`${Slug.TITLE_LARGE}`]: {
+  'title-large': {
     fontWeight: '500',
     fontSize: '1.375rem',
     lineHeight: '1.75rem',
     letterSpacing: '0',
   },
-  [`${Slug.LABEL_SMALL}`]: {
+  'title-small': {
     fontWeight: '500',
     fontSize: '0.875rem',
     lineHeight: '1.25rem',
     letterSpacing: '0.006rem',
   },
-  [`${Slug.BODY}`]: {
+  body: {
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '0.875rem',
     lineHeight: '1.25rem',
     letterSpacing: '0.016rem',
   },
-  [`${Slug.BODY_LARGE}`]: {
+  'body-large': {
     fontSize: '1rem',
     lineHeight: '1.5rem',
     letterSpacing: '0.031rem',
   },
-  [`${Slug.BODY_SMALL}`]: {
+  'body-small': {
     fontSize: '0.75rem',
     lineHeight: '1rem',
     letterSpacing: '0.025rem',
   },
-  [`${Slug.LABEL}`]: {
+  label: {
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '0.75rem',
     lineHeight: '1rem',
     letterSpacing: '0.031rem',
   },
-  [`${Slug.LABEL_LARGE}`]: {
+  'label-large': {
     fontWeight: '500',
     fontSize: '0.875rem',
     lineHeight: '1.25rem',
     letterSpacing: '0.006rem',
   },
-  [`${Slug.LABEL_SMALL}`]: {
+  'label-small': {
     fontWeight: '500',
     fontSize: '0.688rem',
     lineHeight: '1rem',

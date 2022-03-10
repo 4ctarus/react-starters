@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '../../themes';
 
 const HStack = styled('div', {
   display: 'flex',

@@ -1,6 +1,6 @@
-import { styled } from '@stitches/react';
 import { HTMLAttributes, ReactNode } from 'react';
 import { IconType } from 'react-icons';
+import { styled } from '../../themes';
 import ButtonContent, { ButtonContentStyled } from './button-content';
 import ButtonIcon from './button-icon';
 import ButtonOverlay, { ButtonOverlayStyled } from './button-overlay';
