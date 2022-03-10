@@ -14,8 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Stack
 ### ui
-- [Stitches](https://stitches.dev/)
-- [Radix ui](https://www.radix-ui.com/) `in progress`
 
 ### doc
 - [storybook](https://storybook.js.org/) - UI development, testing, and documentation
