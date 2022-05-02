@@ -26,8 +26,8 @@ export enum ButtonSize {
 type Props = React.ComponentProps<typeof ButtonRoot> &
   HTMLAttributes<HTMLButtonElement> & {
     children: ReactNode;
-    leftIcon?: IconType;
-    rightIcon?: IconType;
+    prefixIcon?: IconType;
+    suffixIcon?: IconType;
     disabled?: boolean;
   };
 
@@ -66,10 +66,10 @@ const ButtonRoot = styled('button', {
         border: 'none',
         color: '$$surface',
 
-        '&.left-icon': {
+        '&:has(.prefix-icon)': {
           padding: '0 16px 0 12px',
         },
-        '&.right-icon': {
+        '&:has(.suffix-icon)': {
           padding: '0 12px 0 16px',
         },
       },
@@ -81,10 +81,10 @@ const ButtonRoot = styled('button', {
         backgroundColor: '$$surface',
         border: 'none',
 
-        '&.left-icon': {
+        '&:has(.prefix-icon)': {
           padding: '0 24px 0 16px',
         },
-        '&.right-icon': {
+        '&:has(.suffix-icon)': {
           padding: '0 16px 0 24px',
         },
         [`&:disabled > ${ButtonOverlayStyled}`]: {
@@ -99,10 +99,10 @@ const ButtonRoot = styled('button', {
         background: 'none',
         border: '1px solid $neutral-variant50',
 
-        '&.left-icon': {
+        '&:has(.prefix-icon)': {
           padding: '0 24px 0 16px',
         },
-        '&.right-icon': {
+        '&:has(.suffix-icon)': {
           padding: '0 16px 0 24px',
         },
         '&:focus': {
@@ -118,10 +118,10 @@ const ButtonRoot = styled('button', {
         boxShadow: '$1',
         border: 'none',
 
-        '&.left-icon': {
+        '&:has(.prefix-icon)': {
           padding: '0 24px 0 16px',
         },
-        '&.right-icon': {
+        '&:has(.suffix-icon)': {
           padding: '0 16px 0 24px',
         },
         '&:disabled': {
@@ -164,18 +164,15 @@ const ButtonRoot = styled('button', {
   },
 });
 
-const Button = ({ leftIcon, children, rightIcon, ...rest }: Props) => {
+const Button = ({ prefixIcon, children, suffixIcon, ...rest }: Props) => {
   return (
-    <ButtonRoot
-      {...rest}
-      className={leftIcon ? 'left-icon' : rightIcon ? 'right-icon' : ''}
-    >
+    <ButtonRoot {...rest}>
       <ButtonOverlay />
 
       <ButtonContent>
-        {leftIcon && <ButtonIcon as={leftIcon} />}
+        {prefixIcon && <ButtonIcon as={prefixIcon} class="prefix-icon" />}
         {children}
-        {rightIcon && <ButtonIcon as={rightIcon} />}
+        {suffixIcon && <ButtonIcon as={suffixIcon} class="suffix-icon" />}
       </ButtonContent>
     </ButtonRoot>
   );

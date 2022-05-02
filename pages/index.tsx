@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             </Button>
 
             <Button
-              leftIcon={MdAlarmAdd}
+              prefixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
             </Button>
 
             <Button
-              rightIcon={MdAlarmAdd}
+              suffixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
 
             <Button
               filled
-              leftIcon={MdAlarmAdd}
+              prefixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 
             <Button
               filled
-              rightIcon={MdAlarmAdd}
+              suffixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
 
             <Button
               outlined
-              leftIcon={MdAlarmAdd}
+              prefixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
 
             <Button
               outlined
-              rightIcon={MdAlarmAdd}
+              suffixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
 
             <Button
               elevated
-              leftIcon={MdAlarmAdd}
+              prefixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
@@ -130,7 +130,7 @@ const Home: NextPage = () => {
 
             <Button
               elevated
-              rightIcon={MdAlarmAdd}
+              suffixIcon={MdAlarmAdd}
               {...{ color }}
               onClick={() => clickHandler()}
             >
