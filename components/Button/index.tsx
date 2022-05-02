@@ -36,6 +36,14 @@ const ButtonRoot = styled('button', {
   borderRadius: '999px',
   overflow: 'hidden',
   cursor: 'pointer',
+  padding: '0 $$paddingNoIcon',
+
+  '&.left-icon': {
+    padding: '0 $$paddingIcon 0 $$paddingNoIcon',
+  },
+  '&.right-icon': {
+    padding: '0 $$paddingNoIcon 0 $$paddingIcon',
+  },
 
   [`&:hover > ${ButtonOverlayStyled}`]: {
     opacity: 0.08,
@@ -61,32 +69,21 @@ const ButtonRoot = styled('button', {
   variants: {
     [ButtonVariant.TEXT]: {
       true: {
-        padding: '0 12px',
+        $$paddingIcon: '$space$4',
+        $$paddingNoIcon: '$space$3',
         background: 'none',
         border: 'none',
         color: '$$surface',
-
-        '&:has(.prefix-icon)': {
-          padding: '0 16px 0 12px',
-        },
-        '&:has(.suffix-icon)': {
-          padding: '0 12px 0 16px',
-        },
       },
     },
     [ButtonVariant.FILLED]: {
       true: {
-        padding: '0 24px',
+        $$paddingIcon: '$space$6',
+        $$paddingNoIcon: '$space$4',
         color: '$$onSurface',
         backgroundColor: '$$surface',
         border: 'none',
 
-        '&:has(.prefix-icon)': {
-          padding: '0 24px 0 16px',
-        },
-        '&:has(.suffix-icon)': {
-          padding: '0 16px 0 24px',
-        },
         [`&:disabled > ${ButtonOverlayStyled}`]: {
           opacity: 0.12,
         },
@@ -94,17 +91,12 @@ const ButtonRoot = styled('button', {
     },
     [ButtonVariant.OUTLINED]: {
       true: {
-        padding: '0 24px',
+        $$paddingIcon: '$space$6',
+        $$paddingNoIcon: '$space$4',
         color: '$$surface',
         background: 'none',
         border: '1px solid $neutral-variant50',
 
-        '&:has(.prefix-icon)': {
-          padding: '0 24px 0 16px',
-        },
-        '&:has(.suffix-icon)': {
-          padding: '0 16px 0 24px',
-        },
         '&:focus': {
           borderColor: '$$surface',
         },
@@ -112,18 +104,17 @@ const ButtonRoot = styled('button', {
     },
     [ButtonVariant.ELEVATED]: {
       true: {
-        padding: '0 24px',
+        $$paddingIcon: '$space$6',
+        $$paddingNoIcon: '$space$4',
         color: '$$surface',
-        backgroundColor: '$surface1',
+        backgroundColor: '$neutral99',
         boxShadow: '$1',
         border: 'none',
 
-        '&:has(.prefix-icon)': {
-          padding: '0 24px 0 16px',
+        [`& > ${ButtonOverlayStyled}`]: {
+          opacity: 0.05,
         },
-        '&:has(.suffix-icon)': {
-          padding: '0 16px 0 24px',
-        },
+
         '&:disabled': {
           boxShadow: 'none',
 
