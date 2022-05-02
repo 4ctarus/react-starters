@@ -1,3 +1,4 @@
+import { Box } from '@mantine/core';
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { MdAlarmAdd } from 'react-icons/md';
@@ -18,23 +19,67 @@ const Home: NextPage = () => {
 
       <h4>Buttons</h4>
 
-      <div>
-        <Button onClick={() => clickHandler()}>
-          <span>Button</span>
-        </Button>
+      <Box
+        sx={(theme) => ({
+          display: 'flex',
+          flexDirection: 'column',
+          gap: theme.spacing.sm,
+        })}
+      >
+        <Box
+          sx={(theme) => ({
+            display: 'flex',
+            gap: theme.spacing.sm,
+          })}
+        >
+          <Button onClick={() => clickHandler()}>
+            <span>Button</span>
+          </Button>
 
-        <Button leftIcon={MdAlarmAdd} onClick={() => clickHandler()}>
-          <span>Button left icon</span>
-        </Button>
+          <Button leftIcon={<MdAlarmAdd />} onClick={() => clickHandler()}>
+            <span>Button left icon</span>
+          </Button>
 
-        <Button rightIcon={MdAlarmAdd} onClick={() => clickHandler()}>
-          <span>Button left icon</span>
-        </Button>
+          <Button rightIcon={<MdAlarmAdd />} onClick={() => clickHandler()}>
+            <span>Button left icon</span>
+          </Button>
 
-        <Button disabled onClick={() => clickHandler()}>
-          <span>Button</span>
-        </Button>
-      </div>
+          <Button disabled onClick={() => clickHandler()}>
+            <span>Button</span>
+          </Button>
+        </Box>
+
+        <Box
+          sx={(theme) => ({
+            display: 'flex',
+            gap: theme.spacing.sm,
+          })}
+        >
+          <Button variant="subtle" onClick={() => clickHandler()}>
+            <span>Button</span>
+          </Button>
+
+          <Button
+            variant="subtle"
+            leftIcon={<MdAlarmAdd />}
+            onClick={() => clickHandler()}
+          >
+            <span>Button left icon</span>
+          </Button>
+
+          <Button
+            variant="subtle"
+            rightIcon={<MdAlarmAdd />}
+            onClick={() => clickHandler()}
+          >
+            <span>Button left icon</span>
+          </Button>
+
+          <Button variant="subtle" disabled onClick={() => clickHandler()}>
+            <span>Button</span>
+          </Button>
+        </Box>
+      </Box>
     </>
   );
 };
