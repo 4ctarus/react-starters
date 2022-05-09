@@ -2,6 +2,11 @@ import '@fontsource/poppins';
 import { MantineProvider } from '@mantine/core';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { IntlProvider } from 'react-intl';
+
+const messagesInFrench = {
+  button: 'Button',
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,9 +26,16 @@ function MyApp({ Component, pageProps }: AppProps) {
           /** Put your mantine theme override here */
           fontFamily: 'Poppins',
           colorScheme: 'light',
+          primaryColor: 'indigo',
         }}
       >
-        <Component {...pageProps} />
+        <IntlProvider
+          messages={messagesInFrench}
+          locale="fr"
+          defaultLocale="en"
+        >
+          <Component {...pageProps} />
+        </IntlProvider>
       </MantineProvider>
     </>
   );

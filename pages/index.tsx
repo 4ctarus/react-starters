@@ -2,6 +2,7 @@ import { Box } from '@mantine/core';
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { MdAlarmAdd } from 'react-icons/md';
+import { FormattedMessage } from 'react-intl';
 import Button from '../components/Button';
 
 const Home: NextPage = () => {
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
 
       <h4>Buttons</h4>
 
+      <FormattedMessage description="Boutton" defaultMessage="Button" />
+
       <Box
         sx={(theme) => ({
           display: 'flex',
@@ -33,7 +36,9 @@ const Home: NextPage = () => {
           })}
         >
           <Button onClick={() => clickHandler()}>
-            <span>Button</span>
+            <span>
+              <FormattedMessage defaultMessage="Button" id="some id" />
+            </span>
           </Button>
 
           <Button leftIcon={<MdAlarmAdd />} onClick={() => clickHandler()}>
