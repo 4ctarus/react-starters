@@ -11,7 +11,8 @@
     "lint-fix": "eslint --ext .ts,tsx . --fix",
     "test": "npm run lint-fix && jest",
     "jest": "jest --watch",
-    "extract": "formatjs extract"
+    "extract": "formatjs extract",
+    "compile": "formatjs compile"
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.1",

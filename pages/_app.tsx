@@ -4,10 +4,6 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { IntlProvider } from 'react-intl';
 
-const messagesInFrench = {
-  button: 'Button',
-};
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -29,11 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           primaryColor: 'indigo',
         }}
       >
-        <IntlProvider
-          messages={messagesInFrench}
-          locale="fr"
-          defaultLocale="en"
-        >
+        <IntlProvider locale="fr" defaultLocale="fr">
           <Component {...pageProps} />
         </IntlProvider>
       </MantineProvider>

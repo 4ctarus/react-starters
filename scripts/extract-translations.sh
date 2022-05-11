@@ -1,0 +1,1 @@
+npm run extract -- '{pages,common,modules}/**/*.{js,ts,tsx}' --ignore='**/*.d.ts' --out-file lang/fr.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'

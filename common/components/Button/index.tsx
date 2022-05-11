@@ -4,7 +4,7 @@ import { Button as MantineBtn, ButtonProps, createStyles } from '@mantine/core';
 type Props = ButtonProps<any>;
 
 const useStyles = ({ leftIcon, rightIcon }: Props) => {
-  return createStyles((theme, _params, getRef) => ({
+  return createStyles(() => ({
     root: {
       borderRadius: 999,
       height: 40,
