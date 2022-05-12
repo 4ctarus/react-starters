@@ -1,3 +1,12 @@
 import Accounts from '@accounts';
+import MobileMenuLayout from '@layouts/MobileMenuLayout';
 
-export default Accounts;
+const index = () => {
+  return (
+    <MobileMenuLayout>
+      <Accounts />
+    </MobileMenuLayout>
+  );
+};
+
+export default index;
