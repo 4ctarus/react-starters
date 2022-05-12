@@ -1,78 +1,68 @@
-import HeaderLayout from '@layouts/HeaderLayout';
-import { ActionIcon, Box, Title } from '@mantine/core';
+import TopAppBar from '@layouts/TopAppBar';
+import { Stack } from '@mantine/core';
 import type { NextPage } from 'next';
-import {
-  MdOutlineAddBox,
-  MdOutlinePieChart,
-  MdShowChart,
-} from 'react-icons/md';
-import { FormattedMessage } from 'react-intl';
-import ActionIconList from './components/ActionList';
+import ActionsLayout from './layouts/ActionsLayout';
+import CardsLayout from './layouts/CardsLayout';
+import TotalLayout from './layouts/TotalLayout';
+import { Account } from './types';
 
 const Accounts: NextPage = () => {
-  function onAddClick() {
-    console.log('onAddClick');
-  }
-  function onPieChartClick() {
-    console.log('onPieChartClick');
-  }
-  function onChartClick() {
-    console.log('onChartClick');
-  }
-
-  const mainActions = [
+  const accounts: Account[] = [
     {
-      icon: MdOutlineAddBox,
-      onClick: onAddClick,
+      bank: 'Credit agricole',
+      label: 'Compte chèque',
+      number: '123456789',
+      total: 1000,
     },
     {
-      icon: MdOutlinePieChart,
-      onClick: onPieChartClick,
+      bank: 'Credit agricole',
+      label: 'Livret A',
+      number: '123456789',
+      total: 2580,
     },
     {
-      icon: MdShowChart,
-      onClick: onChartClick,
+      bank: 'Credit agricole',
+      label: 'Compte chèque',
+      number: '123456789',
+      total: 3620,
     },
   ];
 
+  const total = accounts.reduce(
+    (total, account) => (total += account.total),
+    0,
+  );
+
   return (
     <>
-      <HeaderLayout />
+      <TopAppBar />
 
-      <Box
+      <Stack
+        justify="flex-start"
         sx={(theme) => ({
-          padding: theme.spacing.md,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: theme.spacing.md,
+          paddingTop: theme.spacing.md,
+          paddingBottom: theme.spacing.md,
         })}
       >
-        <ActionIconList>
-          {mainActions.map(({ icon, onClick }, index) => (
-            <ActionIcon size="xl" key={index} onClick={() => onClick()}>
-              <Box component={icon} size={32} />
-            </ActionIcon>
-          ))}
-        </ActionIconList>
+        <ActionsLayout
+          sx={{
+            paddingLeft: 8,
+            paddingRight: 8,
+          }}
+        />
 
-        <Box
+        <Stack
+          justify="flex-start"
           sx={(theme) => ({
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            gap: theme.spacing.sm,
-            color: theme.primaryColor,
+            paddingLeft: theme.spacing.md,
+            paddingRight: theme.spacing.md,
           })}
         >
-          <Title order={4}>
-            <FormattedMessage
-              description="accounts total"
-              defaultMessage="Total de mes avoirs"
-            />
-          </Title>
-          <Title order={4}>15 850 $</Title>
-        </Box>
-      </Box>
+          <TotalLayout total={total} />
+
+          <CardsLayout accounts={accounts} />
+        </Stack>
+      </Stack>
     </>
   );
 };
