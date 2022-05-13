@@ -1,5 +1,5 @@
 import TopAppBar from '@components/TopAppBar';
-import { ActionIcon, Box, Stack } from '@mantine/core';
+import { ActionIcon, Box, Stack, useMantineTheme } from '@mantine/core';
 import { ReactNode } from 'react';
 import { MdOutlinePerson } from 'react-icons/md';
 
@@ -11,6 +11,8 @@ export const MobileMenuLayout = ({
   children,
   ...rest
 }: MobileMenuLayoutProps) => {
+  const { primaryColor } = useMantineTheme();
+
   function onUserClick() {
     console.log('onUserClick');
   }
@@ -19,7 +21,12 @@ export const MobileMenuLayout = ({
     <Stack spacing={0} {...rest}>
       <TopAppBar>
         <span>Piloth</span>
-        <ActionIcon variant="filled" size="xl" onClick={() => onUserClick()}>
+        <ActionIcon
+          variant="filled"
+          color={primaryColor}
+          size="xl"
+          onClick={() => onUserClick()}
+        >
           <MdOutlinePerson size={32} />
         </ActionIcon>
       </TopAppBar>
